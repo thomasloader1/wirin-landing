@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Eye, Volume2 } from "lucide-react";
 
@@ -8,7 +7,7 @@ const Hero = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent"></div>
-      
+
       {/* Floating Icons */}
       <div className="absolute top-20 left-10 text-blue-300/30 animate-bounce">
         <BookOpen size={40} />
@@ -26,31 +25,31 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                Libros
+                Adapta
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-                  Accesibles
+                  tus apuntes
                 </span>
               </h1>
               <p className="text-xl text-blue-100 max-w-lg leading-relaxed">
-                Transformamos libros físicos en formatos digitales accesibles para estudiantes con discapacidad visual. 
-                Educación inclusiva y de calidad para todos.
+                Te acompañamos en tu carrera para que nada detenga tu
+                aprendizaje.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 Solicitar Digitalización
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-blue-300 text-blue-100 hover:bg-blue-700/50 px-8 py-6 text-lg transition-all duration-300"
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-blue-500 hover:text-white hover:bg-blue-700/50 px-8 py-6 text-lg transition-all duration-300"
               >
-                Conocer Más
+                Saber Más
               </Button>
             </div>
 
@@ -58,11 +57,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-300">2000+</div>
-                <div className="text-blue-200 text-sm">Libros Digitalizados</div>
+                <div className="text-blue-200 text-sm">
+                  Libros Digitalizados
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-300">500+</div>
-                <div className="text-blue-200 text-sm">Estudiantes Beneficiados</div>
+                <div className="text-blue-200 text-sm">
+                  Estudiantes Beneficiados
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-300">24h</div>
@@ -80,7 +83,9 @@ const Hero = () => {
                   <div className="w-24 h-24 mx-auto bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center animate-pulse">
                     <BookOpen size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Acceso Universal</h3>
+                  <h3 className="text-2xl font-bold text-white">
+                    Acceso Universal
+                  </h3>
                   <p className="text-blue-100">Todos los formatos accesibles</p>
                 </div>
               </div>

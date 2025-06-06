@@ -1,5 +1,13 @@
-
-import { BookOpen, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import {
+  BookOpen,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,27 +17,17 @@ const Footer = () => {
       "Digitalización Braille",
       "Audiolibros",
       "Texto Ampliado",
-      "Apps Móviles"
+      "Apps Móviles",
     ],
-    about: [
-      "Nuestra Misión",
-      "Equipo",
-      "Voluntariado",
-      "Impacto Social"
-    ],
-    support: [
-      "Centro de Ayuda",
-      "Contacto",
-      "Guías de Uso",
-      "Capacitación"
-    ]
+    about: ["Nuestra Misión", "Equipo", "Voluntariado", "Impacto Social"],
+    support: ["Centro de Ayuda", "Contacto", "Guías de Uso", "Capacitación"],
   };
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
   return (
@@ -42,16 +40,15 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
                 <BookOpen size={24} className="text-white" />
               </div>
-              <span className="text-2xl font-bold">LibrosAccesibles</span>
+              <span className="text-2xl font-bold">Wirin</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Democratizando el acceso a la educación a través de la tecnología. 
-              Transformamos libros en formatos accesibles para todos.
+              Transformando el futuro de las bibliotecas digitales
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail size={16} />
-                <span>info@librosaccesibles.org</span>
+                <span>info@wirinadapta.com.ar</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={16} />
@@ -70,8 +67,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                   >
                     {link}
@@ -87,8 +84,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.about.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                   >
                     {link}
@@ -104,8 +101,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                   >
                     {link}
@@ -130,14 +127,6 @@ const Footer = () => {
                   <social.icon size={20} />
                 </a>
               ))}
-            </div>
-            <div className="text-center md:text-right">
-              <p className="text-gray-400">
-                © {currentYear} LibrosAccesibles. Todos los derechos reservados.
-              </p>
-              <p className="text-sm text-gray-500 mt-1">
-                Diseñado con ❤️ para una educación inclusiva
-              </p>
             </div>
           </div>
         </div>
