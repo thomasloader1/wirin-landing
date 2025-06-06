@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wifi, Shield, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Eye, Volume2 } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -11,13 +11,13 @@ const Hero = () => {
       
       {/* Floating Icons */}
       <div className="absolute top-20 left-10 text-blue-300/30 animate-bounce">
-        <Wifi size={40} />
+        <BookOpen size={40} />
       </div>
       <div className="absolute top-40 right-20 text-blue-200/30 animate-pulse">
-        <Shield size={35} />
+        <Eye size={35} />
       </div>
       <div className="absolute bottom-40 left-20 text-blue-400/30 animate-bounce delay-1000">
-        <Zap size={45} />
+        <Volume2 size={45} />
       </div>
 
       <div className="relative container mx-auto px-4 py-20 flex items-center min-h-screen">
@@ -26,14 +26,14 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                Conecta
+                Libros
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-                  tu Futuro
+                  Accesibles
                 </span>
               </h1>
               <p className="text-xl text-blue-100 max-w-lg leading-relaxed">
-                Soluciones de conectividad avanzadas para hogares y empresas. 
-                Internet de alta velocidad, seguro y confiable.
+                Transformamos libros físicos en formatos digitales accesibles para estudiantes con discapacidad visual. 
+                Educación inclusiva y de calidad para todos.
               </p>
             </div>
             
@@ -42,7 +42,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
-                Comenzar Ahora
+                Solicitar Digitalización
                 <ArrowRight className="ml-2" size={20} />
               </Button>
               <Button 
@@ -57,16 +57,16 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-300">1000+</div>
-                <div className="text-blue-200 text-sm">Clientes Satisfechos</div>
+                <div className="text-3xl font-bold text-cyan-300">2000+</div>
+                <div className="text-blue-200 text-sm">Libros Digitalizados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-300">99.9%</div>
-                <div className="text-blue-200 text-sm">Tiempo Activo</div>
+                <div className="text-3xl font-bold text-cyan-300">500+</div>
+                <div className="text-blue-200 text-sm">Estudiantes Beneficiados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-300">24/7</div>
-                <div className="text-blue-200 text-sm">Soporte</div>
+                <div className="text-3xl font-bold text-cyan-300">24h</div>
+                <div className="text-blue-200 text-sm">Tiempo Promedio</div>
               </div>
             </div>
           </div>
@@ -78,10 +78,10 @@ const Hero = () => {
               <div className="relative bg-gradient-to-br from-blue-500/30 to-cyan-500/30 backdrop-blur-sm border border-blue-300/30 rounded-3xl p-8 h-full flex items-center justify-center">
                 <div className="text-center space-y-6">
                   <div className="w-24 h-24 mx-auto bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center animate-pulse">
-                    <Wifi size={40} className="text-white" />
+                    <BookOpen size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Conexión Ultra Rápida</h3>
-                  <p className="text-blue-100">Hasta 1GB de velocidad</p>
+                  <h3 className="text-2xl font-bold text-white">Acceso Universal</h3>
+                  <p className="text-blue-100">Todos los formatos accesibles</p>
                 </div>
               </div>
             </div>

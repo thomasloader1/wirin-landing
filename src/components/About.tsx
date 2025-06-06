@@ -1,13 +1,13 @@
 
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Users, Award, Rocket } from "lucide-react";
+import { BookOpen, Users, Award, Heart } from "lucide-react";
 
 const About = () => {
   const achievements = [
-    { icon: Users, number: "5,000+", label: "Clientes Activos" },
-    { icon: Award, number: "15+", label: "Años de Experiencia" },
-    { icon: CheckCircle, number: "99.9%", label: "Satisfacción del Cliente" },
-    { icon: Rocket, number: "24/7", label: "Soporte Técnico" }
+    { icon: Users, number: "500+", label: "Estudiantes Beneficiados" },
+    { icon: Award, number: "5+", label: "Años de Experiencia" },
+    { icon: BookOpen, number: "2000+", label: "Libros Digitalizados" },
+    { icon: Heart, number: "100%", label: "Compromiso Social" }
   ];
 
   return (
@@ -20,36 +20,36 @@ const About = () => {
               <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Transformamos la
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
-                  Conectividad
+                  Educación
                 </span>
               </h2>
               <p className="text-xl text-blue-100 leading-relaxed">
-                Con más de 15 años de experiencia en el mercado, somos líderes en 
-                soluciones de conectividad. Nuestra misión es brindar internet de 
-                alta calidad que impulse el crecimiento y la innovación.
+                Somos una organización comprometida con hacer la educación accesible 
+                para todos. Nuestra misión es eliminar las barreras que enfrentan los 
+                estudiantes con discapacidad visual en su proceso educativo.
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
-                <CheckCircle className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
+                <BookOpen className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Tecnología Avanzada</h4>
-                  <p className="text-blue-200">Infraestructura de fibra óptica de última generación</p>
+                  <h4 className="text-lg font-semibold text-white">Tecnología Inclusiva</h4>
+                  <p className="text-blue-200">Utilizamos las últimas tecnologías para crear formatos accesibles</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <CheckCircle className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
+                <BookOpen className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Cobertura Amplia</h4>
-                  <p className="text-blue-200">Servicio disponible en toda la región metropolitana</p>
+                  <h4 className="text-lg font-semibold text-white">Calidad Garantizada</h4>
+                  <p className="text-blue-200">Cada libro es revisado meticulosamente para asegurar la calidad</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <CheckCircle className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
+                <BookOpen className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Compromiso Total</h4>
-                  <p className="text-blue-200">Garantía de satisfacción y soporte especializado</p>
+                  <h4 className="text-lg font-semibold text-white">Impacto Social</h4>
+                  <p className="text-blue-200">Trabajamos para crear un mundo más inclusivo y equitativo</p>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const About = () => {
               size="lg" 
               className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
-              Conoce Nuestra Historia
+              Conoce Nuestra Misión
             </Button>
           </div>
 

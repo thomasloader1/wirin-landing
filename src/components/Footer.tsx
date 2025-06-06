@@ -1,27 +1,27 @@
 
-import { Wifi, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { BookOpen, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     services: [
-      "Internet Residencial",
-      "Internet Empresarial",
-      "Seguridad de Red",
-      "Soporte Técnico"
+      "Digitalización Braille",
+      "Audiolibros",
+      "Texto Ampliado",
+      "Apps Móviles"
     ],
-    company: [
-      "Sobre Nosotros",
-      "Nuestro Equipo",
-      "Carreras",
-      "Noticias"
+    about: [
+      "Nuestra Misión",
+      "Equipo",
+      "Voluntariado",
+      "Impacto Social"
     ],
     support: [
       "Centro de Ayuda",
       "Contacto",
-      "Estado del Servicio",
-      "Términos de Servicio"
+      "Guías de Uso",
+      "Capacitación"
     ]
   };
 
@@ -40,26 +40,26 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
-                <Wifi size={24} className="text-white" />
+                <BookOpen size={24} className="text-white" />
               </div>
-              <span className="text-2xl font-bold">Wirin</span>
+              <span className="text-2xl font-bold">LibrosAccesibles</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Conectando el futuro con tecnología de vanguardia. 
-              Tu socio confiable en soluciones de conectividad.
+              Democratizando el acceso a la educación a través de la tecnología. 
+              Transformamos libros en formatos accesibles para todos.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail size={16} />
-                <span>info@wirin.com</span>
+                <span>info@librosaccesibles.org</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (555) 234-5678</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin size={16} />
-                <span>Av. Principal 123, Ciudad</span>
+                <span>Av. Educación 456, Ciudad</span>
               </div>
             </div>
           </div>
@@ -81,11 +81,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* About */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Empresa</h3>
+            <h3 className="text-lg font-semibold mb-6">Organización</h3>
             <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
+              {footerLinks.about.map((link, index) => (
                 <li key={index}>
                   <a 
                     href="#" 
@@ -133,10 +133,10 @@ const Footer = () => {
             </div>
             <div className="text-center md:text-right">
               <p className="text-gray-400">
-                © {currentYear} Wirin. Todos los derechos reservados.
+                © {currentYear} LibrosAccesibles. Todos los derechos reservados.
               </p>
               <p className="text-sm text-gray-500 mt-1">
-                Diseñado con ❤️ para conectar el mundo
+                Diseñado con ❤️ para una educación inclusiva
               </p>
             </div>
           </div>

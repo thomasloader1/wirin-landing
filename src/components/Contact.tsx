@@ -14,39 +14,39 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    service: "",
+    institution: "",
     message: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Mensaje Enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
+      title: "Solicitud Enviada",
+      description: "Nos pondremos en contacto contigo para iniciar el proceso de digitalización.",
     });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", institution: "", message: "" });
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Ubicación",
-      details: ["Av. Principal 123", "Ciudad, País 12345"]
+      details: ["Av. Educación 456", "Ciudad Universitaria, País"]
     },
     {
       icon: Phone,
       title: "Teléfono",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+      details: ["+1 (555) 234-5678", "+1 (555) 876-5432"]
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@wirin.com", "soporte@wirin.com"]
+      details: ["info@librosaccesibles.org", "soporte@librosaccesibles.org"]
     },
     {
       icon: Clock,
       title: "Horarios",
-      details: ["Lun - Vie: 8:00 - 18:00", "Sáb: 9:00 - 14:00"]
+      details: ["Lun - Vie: 8:00 - 17:00", "Sáb: 9:00 - 13:00"]
     }
   ];
 
@@ -55,11 +55,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            ¿Listo para <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">Conectarte?</span>
+            ¿Necesitas Digitalizar <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">un Libro?</span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Contáctanos hoy mismo y descubre cómo podemos mejorar tu conectividad. 
-            Nuestro equipo está listo para ayudarte.
+            Contáctanos para solicitar la digitalización de libros académicos. 
+            Trabajamos con estudiantes, instituciones educativas y organizaciones.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const Contact = () => {
             <Card className="bg-white/10 backdrop-blur-sm border-blue-300/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-white text-center">
-                  Solicita tu Cotización Gratuita
+                  Solicita Digitalización Gratuita
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-8">
@@ -144,29 +144,29 @@ const Contact = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="service" className="text-blue-100">
-                        Servicio de Interés
+                      <Label htmlFor="institution" className="text-blue-100">
+                        Institución Educativa
                       </Label>
                       <Input
-                        id="service"
-                        value={formData.service}
-                        onChange={(e) => setFormData({...formData, service: e.target.value})}
+                        id="institution"
+                        value={formData.institution}
+                        onChange={(e) => setFormData({...formData, institution: e.target.value})}
                         className="bg-white/10 border-blue-300/30 text-white placeholder:text-blue-200"
-                        placeholder="Internet Residencial, Empresarial..."
+                        placeholder="Universidad, Colegio..."
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="text-blue-100">
-                      Mensaje
+                      Detalles del Libro a Digitalizar
                     </Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="bg-white/10 border-blue-300/30 text-white placeholder:text-blue-200 min-h-[120px]"
-                      placeholder="Cuéntanos sobre tus necesidades de conectividad..."
+                      placeholder="Título del libro, autor, editorial, formato deseado (Braille, audio, texto ampliado)..."
                       required
                     />
                   </div>
@@ -176,7 +176,7 @@ const Contact = () => {
                     size="lg" 
                     className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
                   >
-                    Enviar Mensaje
+                    Enviar Solicitud
                   </Button>
                 </form>
               </CardContent>

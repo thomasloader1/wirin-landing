@@ -1,44 +1,44 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wifi, Shield, Headphones, Zap, Globe, Settings } from "lucide-react";
+import { BookOpen, Volume2, Type, Smartphone, Headphones, Settings } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Wifi,
-      title: "Internet Residencial",
-      description: "Conexión de alta velocidad para tu hogar con planes flexibles desde 100MB hasta 1GB.",
-      features: ["Velocidad garantizada", "Sin límites de datos", "WiFi 6 incluido"]
+      icon: BookOpen,
+      title: "Digitalización Braille",
+      description: "Conversión de libros físicos a formato Braille digital compatible con líneas Braille y dispositivos táctiles.",
+      features: ["Formato BRF", "Compatible con displays Braille", "Navegación optimizada"]
     },
     {
-      icon: Globe,
-      title: "Internet Empresarial",
-      description: "Soluciones corporativas con SLA garantizado y soporte prioritario 24/7.",
-      features: ["IP estática", "Ancho de banda dedicado", "Soporte empresarial"]
+      icon: Volume2,
+      title: "Audiolibros",
+      description: "Grabación profesional de libros con voces claras y naturales para una experiencia auditiva óptima.",
+      features: ["Voces profesionales", "Navegación por capítulos", "Velocidad ajustable"]
     },
     {
-      icon: Shield,
-      title: "Seguridad Avanzada",
-      description: "Protección completa con firewall, antivirus y monitoreo de red en tiempo real.",
-      features: ["Firewall avanzado", "Protección DDoS", "Monitoreo 24/7"]
+      icon: Type,
+      title: "Texto Ampliado",
+      description: "Libros con tipografías de alto contraste y tamaños ajustables para estudiantes con baja visión.",
+      features: ["Fuentes de alto contraste", "Tamaños personalizables", "Espaciado optimizado"]
     },
     {
-      icon: Settings,
-      title: "Instalación Técnica",
-      description: "Instalación profesional y configuración completa sin costo adicional.",
-      features: ["Instalación gratuita", "Configuración WiFi", "Optimización de red"]
+      icon: Smartphone,
+      title: "Apps Móviles",
+      description: "Aplicaciones móviles diseñadas para accesibilidad con lectores de pantalla integrados.",
+      features: ["Compatible con TalkBack", "VoiceOver integrado", "Interfaz simplificada"]
     },
     {
       icon: Headphones,
-      title: "Soporte 24/7",
-      description: "Atención técnica especializada disponible todos los días del año.",
-      features: ["Chat en línea", "Soporte telefónico", "Asistencia remota"]
+      title: "Soporte Técnico",
+      description: "Asistencia especializada para el uso de tecnologías de apoyo y formatos accesibles.",
+      features: ["Capacitación personalizada", "Soporte telefónico", "Tutoriales incluidos"]
     },
     {
-      icon: Zap,
-      title: "Tecnología de Punta",
-      description: "Infraestructura de fibra óptica con la última tecnología en conectividad.",
-      features: ["Fibra óptica", "Baja latencia", "Alta disponibilidad"]
+      icon: Settings,
+      title: "Formatos Personalizados",
+      description: "Adaptación de contenido según las necesidades específicas de cada estudiante.",
+      features: ["EPUB accesible", "HTML estructurado", "PDF con OCR"]
     }
   ];
 
@@ -50,8 +50,8 @@ const Services = () => {
             Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Servicios</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos soluciones integrales de conectividad diseñadas para satisfacer 
-            las necesidades específicas de cada cliente.
+            Ofrecemos soluciones integrales de digitalización diseñadas para hacer 
+            la educación accesible a todos los estudiantes con discapacidad visual.
           </p>
         </div>
 
