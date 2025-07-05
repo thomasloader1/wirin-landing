@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { addContact } from "@/lib/firebase";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { sendEmail, generateEmailHTML } from "@/utils/sendEmail";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -26,37 +26,50 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await addContact(formData);
+      // Crear subject dinámico basado en el tipo de usuario
+      const userTypeLabels = {
+        estudiante: 'Alumno',
+        voluntario: 'Voluntario',
+        bibliotecario: 'Bibliotecario'
+      };
+      
+      const userTypeLabel = userTypeLabels[formData.userType as keyof typeof userTypeLabels] || 'Usuario';
+      
+      // Enviar email con los datos del formulario
+      const emailHTML = generateEmailHTML(formData);
+      const result = await sendEmail({
+        to: "info@wirinadapta.com.ar", // Email de destino
+        subject: `Nueva Solicitud de ${userTypeLabel} - ${formData.name}`,
+        html: emailHTML,
+      });
+      
+      console.log('Email enviado exitosamente:', result);
+      
+      // Mensaje diferente para desarrollo vs producción
+      const isDev = import.meta.env.DEV;
 
-      if (result.success) {
-        toast({
-          title: "Solicitud Enviada",
-          description:
-            "Nos pondremos en contacto contigo para iniciar el proceso de digitalización.",
-        });
-        // Resetear el formulario
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          address: "",
-          userType: "estudiante",
-          message: "",
-        });
-      } else {
-        toast({
-          title: "Error",
-          description:
-            "Hubo un problema al enviar tu solicitud. Por favor, inténtalo nuevamente.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
       toast({
-        title: "Error",
+        title: isDev ? "¡Solicitud simulada enviada!" : "Solicitud Enviada",
+        description: isDev 
+          ? "[DESARROLLO] Email simulado correctamente. En producción se enviará al destinatario real."
+          : "Nos pondremos en contacto contigo para iniciar el proceso de digitalización.",
+      });
+      
+      // Resetear el formulario
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        userType: "estudiante",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error al Enviar",
         description:
-          "Hubo un problema al enviar tu solicitud. Por favor, inténtalo nuevamente.",
+          "No se pudo enviar tu solicitud. Verifica tu conexión e inténtalo nuevamente.",
         variant: "destructive",
       });
     } finally {
