@@ -4,9 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { addContact } from "@/lib/firebase";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,7 +16,8 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    institution: "",
+    address: "",
+    userType: "estudiante", // Valor predeterminado
     message: "",
   });
 
@@ -37,7 +39,8 @@ const Contact = () => {
           name: "",
           email: "",
           phone: "",
-          institution: "",
+          address: "",
+          userType: "estudiante",
           message: "",
         });
       } else {
@@ -63,19 +66,15 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Ubicación",
-      details: ["Av. Educación 456", "Ciudad Universitaria, País"],
-    },
-    {
-      icon: Phone,
-      title: "Teléfono",
-      details: ["+1 (555) 234-5678", "+1 (555) 876-5432"],
-    },
-    {
       icon: Mail,
       title: "Email",
-      details: ["info@wirinadapta.com.ar", "soporte@wirinadapta.com.ar"],
+      details: ["info@wirinadapta.com.ar"],
+    },
+    {
+      icon: Instagram,
+      title: "Instagram",
+      details: ["@wirin_adapta"],
+      link: "https://www.instagram.com/wirin_adapta/",
     },
   ];
 
@@ -121,7 +120,18 @@ const Contact = () => {
                           key={idx}
                           className="text-sm sm:text-base text-blue-200"
                         >
-                          {detail}
+                          {info.link ? (
+                            <a 
+                              href={info.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-cyan-300 transition-colors"
+                            >
+                              {detail}
+                            </a>
+                          ) : (
+                            detail
+                          )}
                         </p>
                       ))}
                     </div>
@@ -208,25 +218,55 @@ const Contact = () => {
                     </div>
                     <div className="space-y-2">
                       <Label
-                        htmlFor="institution"
+                        htmlFor="address"
                         className="text-blue-100 text-sm sm:text-base"
                       >
-                        Institución Educativa
+                        Dirección
                       </Label>
                       <Input
-                        id="institution"
-                        value={formData.institution}
+                        id="address"
+                        value={formData.address}
                         onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            institution: e.target.value,
-                          })
+                          setFormData({ ...formData, address: e.target.value })
                         }
                         className="bg-white/10 border-blue-300/30 text-white placeholder:text-blue-200 h-10 sm:h-11"
-                        placeholder="Universidad, Colegio..."
+                        placeholder="Tu dirección"
+                        required
                         disabled={isSubmitting}
                       />
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label className="text-blue-100 text-sm sm:text-base">
+                      Tipo de Usuario
+                    </Label>
+                    <RadioGroup
+                      value={formData.userType}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, userType: value })
+                      }
+                      className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 mt-2"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="bibliotecario" id="bibliotecario" />
+                        <Label htmlFor="bibliotecario" className="text-white cursor-pointer">
+                          Bibliotecario
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="voluntario" id="voluntario" />
+                        <Label htmlFor="voluntario" className="text-white cursor-pointer">
+                          Voluntario
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="estudiante" id="estudiante" />
+                        <Label htmlFor="estudiante" className="text-white cursor-pointer">
+                          Estudiante
+                        </Label>
+                      </div>
+                    </RadioGroup>
                   </div>
 
                   <div className="space-y-2">

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Award, Heart } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
   const achievements = [
@@ -21,6 +22,7 @@ const About = () => {
     { icon: Heart, number: "100%", label: "Compromiso Social" },
   ];
 
+
   return (
     <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900">
       <div className="container mx-auto px-4">
@@ -34,11 +36,11 @@ const About = () => {
                   Educación
                 </span>
               </h2>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-2xl text-blue-100 leading-relaxed font-bold">
                 Somos una organización comprometida con hacer la educación
                 accesible para todos. Nuestra misión es eliminar las barreras
                 que enfrentan los estudiantes con discapacidad visual en su
-                proceso educativo.
+                proceso educativo
               </p>
             </div>
 
@@ -49,10 +51,11 @@ const About = () => {
                   size={24}
                 />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-2xl font-semibold text-white font-bold">
                     Tecnología Inclusiva
                   </h4>
-                  <p className="text-blue-200">
+                  <p className="text-xl text-blue-200">
+
                     Utilizamos las últimas tecnologías para crear formatos
                     accesibles
                   </p>
@@ -64,10 +67,10 @@ const About = () => {
                   size={24}
                 />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-2xl font-semibold text-white font-bold">
                     Calidad Garantizada
                   </h4>
-                  <p className="text-blue-200">
+                  <p className="text-xl text-blue-200">
                     Cada libro es revisado meticulosamente para asegurar la
                     calidad
                   </p>
@@ -79,10 +82,10 @@ const About = () => {
                   size={24}
                 />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-2xl font-semibold text-white font-bold">
                     Impacto Social
                   </h4>
-                  <p className="text-blue-200">
+                  <p className="text-xl text-blue-200">
                     Trabajamos para crear un mundo más inclusivo y equitativo
                   </p>
                 </div>
@@ -117,6 +120,8 @@ const About = () => {
             ))}
           </div>
         </div>
+
+      
       </div>
     </section>
   );

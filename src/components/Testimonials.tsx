@@ -1,106 +1,58 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { useState } from "react";
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Ana García",
-      role: "Estudiante de Derecho",
-      company: "Universidad Nacional",
-      rating: 0,
-      title: "Equipo Web",
-      comment:
-        "Gracias a los libros digitalizados, ahora puedo estudiar de manera independiente. La calidad del Braille digital es excepcional.",
-      avatar: "AG",
-    },
-    {
-      name: "Carlos Mendez",
-      role: "Profesor",
-      company: "Instituto Pedagógico",
-      rating: 5,
-      comment:
-        "Esta organización ha transformado la manera en que nuestros estudiantes acceden al conocimiento. Un trabajo extraordinario.",
-      avatar: "CM",
-    },
+  // Array de miembros del equipo (vacío por ahora, solo para estructura)
+ const teamMembers = [
+    { id: 1, name: "Andres Aquino", image: "/placeholder.svg" },
+    { id: 2, name: "Tomás Aranda", image: "/placeholder.svg" },
+    { id: 3, name: "Lucas Barrios", image: "/placeholder.svg" },
+    { id: 4, name: "Tomás Goméz", image: "/placeholder.svg" },
+    { id: 5, name: "Martín Guerreiro", image: "/placeholder.svg" },
+    { id: 6, name: "Rocío Mercado", image: "/placeholder.svg" },
+    { id: 7, name: "Ariel Nappio", image: "/placeholder.svg" },
+    { id: 8, name: "Joaquin Oviedo", image: "/placeholder.svg" },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Quienes conforman{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
-              Wirin
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Somos un grupo de profesionales apasionados, comprometidos con la
-            accesibilidad y la inclusión. Nuestra misión es facilitar el acceso
-            a la educación para personas con disminución visual y/o dificultades
-            motoras, brindando soluciones tecnológicas que les permitan
-            desenvolverse con mayor autonomía y comodidad en su día a día.
+        {/* Quienes conforman sección */}
+        <div className="mb-16 text-center animate-fade-in">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900">Quienes conforman</h2>
+            <img src="/WIRIN25 (1).png" alt="WIRIN" className="h-[8.5rem] object-contain" />
+          </div>
+          
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto mb-16">
+            Somos un grupo de profesionales apasionados, comprometidos con la accesibilidad y la inclusión. 
+            Nuestra misión es facilitar el acceso a la educación para personas con disminución visual y/o 
+            dificultades motoras, brindando soluciones tecnológicas que les permitan desenvolverse con mayor 
+            autonomía y comodidad en su día a día
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        
+        {/* Grid de miembros del equipo */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {teamMembers.map((member) => (
+            <div 
+              key={member.id} 
+              className="relative group overflow-hidden rounded-xl aspect-square shadow-lg shadow-gray-200 border border-gray-100"
             >
-              <CardContent className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <h2 className="text-2xl font-medium text-blue-500">
-                    {testimonial.title}
-                  </h2>
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="text-yellow-400 fill-current"
-                        size={20}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                  "{testimonial.comment}"
-                </p>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-lg">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-gray-600">
-                      {testimonial.role} • {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              <img 
+                src={member.image} 
+                alt={member.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
+                <h3 className="text-white text-2xl font-semibold text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{member.name}</h3>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center animate-fade-in delay-500">
-          <p className="text-gray-500 mb-8">
-            Avalados por instituciones educativas reconocidas
-          </p>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
-            <div className="text-2xl font-bold text-gray-400">UNESCO</div>
-            <div className="w-px h-8 bg-gray-300"></div>
-            <div className="text-2xl font-bold text-gray-400">ONCE</div>
-            <div className="w-px h-8 bg-gray-300"></div>
-            <div className="text-2xl font-bold text-gray-400">DAISY</div>
-          </div>
-        </div>
+       
+          
+        
       </div>
     </section>
   );
