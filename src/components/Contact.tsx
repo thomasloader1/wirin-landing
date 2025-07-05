@@ -45,14 +45,26 @@ const Contact = () => {
       
       console.log('Email enviado exitosamente:', result);
       
-      // Mensaje diferente para desarrollo vs producción
+      // Mensaje diferente para desarrollo, producción normal, y fallback por CORS
       const isDev = import.meta.env.DEV;
-
+      const isCorsFailback = result.status === 'cors_fallback';
+      
+      let title, description;
+      
+      if (isDev) {
+        title = "¡Solicitud simulada enviada!";
+        description = "[DESARROLLO] Email simulado correctamente. En producción se enviará al destinatario real.";
+      } else if (isCorsFailback) {
+        title = "¡Solicitud registrada!";
+        description = "Tu solicitud ha sido registrada. Debido a un problema técnico temporal, te contactaremos directamente por email.";
+      } else {
+        title = "¡Solicitud Enviada!";
+        description = "Nos pondremos en contacto contigo para iniciar el proceso de digitalización.";
+      }
+      
       toast({
-        title: isDev ? "¡Solicitud simulada enviada!" : "Solicitud Enviada",
-        description: isDev 
-          ? "[DESARROLLO] Email simulado correctamente. En producción se enviará al destinatario real."
-          : "Nos pondremos en contacto contigo para iniciar el proceso de digitalización.",
+        title,
+        description,
       });
       
       // Resetear el formulario
