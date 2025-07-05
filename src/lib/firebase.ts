@@ -19,7 +19,8 @@ export const addContact = async (contactData: {
   name: string;
   email: string;
   phone: string;
-  institution: string;
+  address: string;
+  userType: string;
   message: string;
 }) => {
   try {

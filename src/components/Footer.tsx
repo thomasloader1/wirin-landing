@@ -1,133 +1,42 @@
-import {
-  BookOpen,
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
+import { Mail, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    services: [
-      "Digitalización Braille",
-      "Audiolibros",
-      "Texto Ampliado",
-      "Apps Móviles",
-    ],
-    about: ["Nuestra Misión", "Equipo", "Voluntariado", "Impacto Social"],
-    support: ["Centro de Ayuda", "Contacto", "Guías de Uso", "Capacitación"],
-  };
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
-
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex flex-col items-center justify-center space-y-8">
           {/* Brand */}
-          <div className="space-y-6">
+          <div className="flex flex-col items-center space-y-6 text-center">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
-                <BookOpen size={24} className="text-white" />
-              </div>
-              <span className="text-2xl font-bold">Wirin</span>
+              <img src="/WIRIN-BLANCO.png" alt="Wirin Logo" className="h-12" />
             </div>
-            <p className="text-gray-400 leading-relaxed">
-              Transformando el futuro de las bibliotecas digitales
+            <p className="text-gray-400 leading-relaxed max-w-md">
+              TRANSFORMANDO LA EDUCACIÓN, UN TEXTO A LA VEZ
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Mail size={16} />
-                <span>info@wirinadapta.com.ar</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Phone size={16} />
-                <span>+1 (555) 234-5678</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <MapPin size={16} />
-                <span>Av. Educación 456, Ciudad</span>
-              </div>
-            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Servicios</h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Contact Info - Only Email */}
+          <div className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-colors">
+            <Mail size={18} />
+            <a href="mailto:info@wirinadapta.com.ar">info@wirinadapta.com.ar</a>
           </div>
 
-          {/* About */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Organización</h3>
-            <ul className="space-y-3">
-              {footerLinks.about.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Social Links - Only Instagram */}
+          <div className="flex space-x-6">
+            <a
+              href="https://www.instagram.com/wirin_adapta/"
+              aria-label="Instagram"
+              className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-500 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            >
+              <Instagram size={20} />
+            </a>
           </div>
 
-          {/* Support */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Soporte</h3>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links & Copyright */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex space-x-6">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
+          {/* Copyright */}
+          <div className="text-gray-500 text-center">
+            © {currentYear} Wirin. Todos los derechos reservados.
           </div>
         </div>
       </div>

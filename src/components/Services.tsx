@@ -12,35 +12,35 @@ const Services = () => {
   const services = [
     {
       icon: BookOpen,
-      title: "Comunidad",
+      title: "Trabajo Colaborativo",
       description:
-        "Trabajo colaborativo de Voluntarios comprometidos con el apendizaje",
+        "La comunidad trabaja en conjunto para garantizar accesibilidad y calidad en los materiales de estudio",
       features: [
-        "Formato BRF",
-        "Compatible con displays Braille",
-        "Navegación optimizada",
+        "Proceso supervisado por etapas",
+        "Correcciones en línea",
+        "Tareas asignadas por tema",
       ],
     },
     {
       icon: Volume2,
-      title: "Múltiples Formatos",
+      title: "Formatos Accesibles",
       description:
-        "Generamos Audios, Documentos PDF, Word personalizado y soporte Ebook",
+        "Convertimos tus textos en versiones adaptadas. Todo desde una misma plataforma",
       features: [
-        "Voces profesionales",
-        "Navegación por capítulos",
-        "Velocidad ajustable",
+        "Texto a voz (TTS)",
+        "Apuntes de voz integrados",
+        "Descarga en múltiples formatos",
       ],
     },
     {
       icon: Type,
-      title: "Gestión Eficiente",
+      title: "Experiencia Personalizada",
       description:
-        "Solicita tu bibliografía y controla el estado a todo momento",
+         "Accedé a tu material de estudio con configuración visual y auditiva adaptada a tus necesidades",
       features: [
-        "Fuentes de alto contraste",
-        "Tamaños personalizables",
-        "Espaciado optimizado",
+        "Tamaño de fuente ajustable",
+        "Alto contraste para baja visión",
+        "Modo de lectura asistida",
       ],
     },
   ];
@@ -55,7 +55,7 @@ const Services = () => {
               Servicios
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-3xl text-gray-600 max-w-3xl mx-auto">
             Ofrecemos soluciones integrales de digitalización diseñadas para
             hacer la educación accesible a todos los estudiantes con
             discapacidad visual.
@@ -73,19 +73,19 @@ const Services = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <service.icon size={32} className="text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-gray-600"
+                      className="flex items-center text-2xl text-gray-600 font-bold"
                     >
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-3"></div>
                       {feature}
