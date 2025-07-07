@@ -15,7 +15,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="equipo" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Quienes conforman sección */}
         <div className="mb-16 text-center animate-fade-in">

@@ -95,8 +95,14 @@ const About = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              onClick={() => {
+                const equipoSection = document.getElementById('equipo');
+                if (equipoSection) {
+                  equipoSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              Conoce Nuestra Misión
+              Conoce nuestro equipo
             </Button>
           </div>
 
