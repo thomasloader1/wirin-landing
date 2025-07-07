@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, Eye, Volume2 } from "lucide-react";
+import { ArrowRight, BookOpen, Eye, Volume2, LogIn } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -7,6 +7,19 @@ const Hero = () => {
       {/* Logo */}
       <div className="absolute md:top-[calc(8rem*0.9)] md:left-[calc(8rem*1.1)] top-4 left-1/2 transform -translate-x-1/2 md:transform-none z-10 bg-black/20 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-white/10">
         <img src="/WIRIN-BLANCO.png" alt="Wirin Logo" className="h-[calc(4rem*1.3)] md:h-[calc(4rem*1.3)] h-16" />
+      </div>
+
+      {/* Login Button - Top Right */}
+      <div className="absolute top-6 right-6 z-20">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full"
+          onClick={() => window.open('https://app.wirinadapta.com.ar', '_blank')}
+        >
+          <LogIn className="mr-2" size={16} />
+          Ingresar
+        </Button>
       </div>
 
       {/* Background Pattern */}
@@ -35,7 +48,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Solicitar Digitalización
                 <ArrowRight className="ml-2" size={20} />
@@ -43,7 +62,13 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-blue-500 hover:text-white hover:bg-blue-700/50 px-8 py-6 text-lg transition-all duration-300"
+                className="text-blue-300 border-blue-300 hover:text-white hover:bg-blue-600/50 hover:border-blue-400 px-8 py-6 text-lg transition-all duration-300 backdrop-blur-sm"
+                onClick={() => {
+                  const servicesSection = document.getElementById('services');
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Saber Más
               </Button>

@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 const Testimonials = () => {
-  // Array de miembros del equipo (vacío por ahora, solo para estructura)
+  // Array de miembros del equipo con enlaces de LinkedIn
  const teamMembers = [
-    { id: 1, name: "Andres Aquino", image: "/placeholder.svg" },
-    { id: 2, name: "Tomás Aranda", image: "/placeholder.svg" },
-    { id: 3, name: "Lucas Barrios", image: "/placeholder.svg" },
-    { id: 4, name: "Tomás Goméz", image: "/placeholder.svg" },
-    { id: 5, name: "Martín Guerreiro", image: "/placeholder.svg" },
-    { id: 6, name: "Rocío Mercado", image: "/placeholder.svg" },
-    { id: 7, name: "Ariel Nappio", image: "/placeholder.svg" },
-    { id: 8, name: "Joaquin Oviedo", image: "/placeholder.svg" },
+    { id: 1, name: "Andres Aquino", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/andres-aquino" },
+    { id: 2, name: "Tomás Aranda", image: "/tomas-aranda.jpg", linkedin: "https://www.linkedin.com/in/tomas-esteban-aranda" },
+    { id: 3, name: "Lucas Barrios", image: "/lucas-barrios.png", linkedin: "https://www.linkedin.com/in/lucas-d-barrios-it" },
+    { id: 4, name: "Tomás Goméz", image: "/tomas-gomez.png", linkedin: "https://www.linkedin.com/in/gtg-dev" },
+    { id: 5, name: "Martín Guerreiro", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/martin-guerreiro" },
+    { id: 6, name: "Rocío Mercado", image: "/rocio-mercado.png", linkedin: "https://www.linkedin.com/in/rocio-mercado" },
+    { id: 7, name: "Ariel Nappio", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/ariel-nappio" },
+    { id: 8, name: "Joaquin Oviedo", image: "/joaquin-oviedo.png", linkedin: "https://www.linkedin.com/in/joaquin-oviedo" },
   ];
 
   return (
@@ -32,11 +32,12 @@ const Testimonials = () => {
         </div>
         
         {/* Grid de miembros del equipo */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {teamMembers.map((member) => (
             <div 
               key={member.id} 
-              className="relative group overflow-hidden rounded-xl aspect-square shadow-lg shadow-gray-200 border border-gray-100"
+              className="relative group overflow-hidden rounded-xl aspect-square shadow-lg shadow-gray-200 border border-gray-100 cursor-pointer transition-transform duration-300 hover:scale-105 w-[85%] mx-auto"
+              onClick={() => window.open(member.linkedin, '_blank')}
             >
               <img 
                 src={member.image} 
@@ -45,6 +46,14 @@ const Testimonials = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                 <h3 className="text-white text-2xl font-semibold text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{member.name}</h3>
+              </div>
+              {/* Indicador visual de que es clickeable */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
               </div>
             </div>
           ))}
