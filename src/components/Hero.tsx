@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="relative container mx-auto px-4 py-20 flex items-center min-h-screen">
         <div className="flex justify-end w-full">
           {/* Content */}
-          <div className="space-y-8 animate-fade-in lg:w-1/2 ml-[65%]">
+          <div className="space-y-8 animate-fade-in lg:w-1/2 ml-[100%]">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
                 Adapta

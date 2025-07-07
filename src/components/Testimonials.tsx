@@ -3,13 +3,14 @@ import { useState } from "react";
 const Testimonials = () => {
   // Array de miembros del equipo con enlaces de LinkedIn
  const teamMembers = [
-    { id: 1, name: "Andres Aquino", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/andres-aquino" },
+    { id: 1, name: "Andres Aquino", image: "/andy.png", linkedin: "https://github.com/andygoeshard" },
     { id: 2, name: "Tomás Aranda", image: "/tomas-aranda.jpg", linkedin: "https://www.linkedin.com/in/tomas-esteban-aranda" },
     { id: 3, name: "Lucas Barrios", image: "/lucas-barrios.png", linkedin: "https://www.linkedin.com/in/lucas-d-barrios-it" },
     { id: 4, name: "Tomás Goméz", image: "/tomas-gomez.png", linkedin: "https://www.linkedin.com/in/gtg-dev" },
-    { id: 5, name: "Martín Guerreiro", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/martin-guerreiro" },
-    { id: 6, name: "Rocío Mercado", image: "/rocio-mercado.png", linkedin: "https://www.linkedin.com/in/rocio-mercado" },
-    { id: 7, name: "Ariel Nappio", image: "/placeholder.svg", linkedin: "https://www.linkedin.com/in/ariel-nappio" },
+    { id: 5, name: "Martín Guerreiro", image: "/martin-guerreiro.png", linkedin: "https://www.linkedin.com/in/martin-guerreiro" },
+    { id: 6, name: "Rocío Mercado", image: "/rocio-mercado.png", linkedin: "https://www.linkedin.com/in/rocío-ayelén-mercado-176b32289" },
+    { id: 7, name: "Ariel Nappio", image: "/ariel-nappio.png", linkedin: "https://www.linkedin.com/in/ariel-eduardo-nappio-7840071a4" },
+
     { id: 8, name: "Joaquin Oviedo", image: "/joaquin-oviedo.png", linkedin: "https://www.linkedin.com/in/joaquin-oviedo" },
   ];
 
