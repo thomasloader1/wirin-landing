@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       icon: Award,
-      number: "Adaptación  ",
+      number: "Adaptación",
       label: "Procesamiento de bibliografías",
     },
     {
@@ -107,19 +107,19 @@ const About = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-8 animate-fade-in delay-300">
+          <div className="grid grid-cols-2 gap-4 md:gap-8 animate-fade-in delay-300">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-blue-300/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+                className="text-center p-4 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-blue-300/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 overflow-hidden"
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center">
                   <achievement.icon size={32} className="text-white" />
                 </div>
-                <div className="text-3xl font-bold text-cyan-300 mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-cyan-300 mb-2 break-words">
                   {achievement.number}
                 </div>
-                <div className="text-blue-200 font-medium">
+                <div className="text-sm md:text-base text-blue-200 font-medium break-words">
                   {achievement.label}
                 </div>
               </div>

@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Eye, Volume2, LogIn } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="relative min-h-screen overflow-hidden" style={{ backgroundImage: 'url("/WIRINLanding.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Logo */}
       <div className="absolute md:top-[calc(8rem*0.9)] md:left-[calc(8rem*1.1)] top-4 left-1/2 transform -translate-x-1/2 md:transform-none z-10 bg-black/20 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-white/10">
-        <img src="/WIRIN-BLANCO.png" alt="Wirin Logo" className="h-[calc(4rem*1.3)] md:h-[calc(4rem*1.3)] h-16" />
+        <img 
+          src={isMobile ? "/WIRIN50.png" : "/WIRIN-BLANCO.png"} 
+          alt="Wirin Logo" 
+          className="h-12 md:h-[calc(4rem*1.3)]" 
+        />
       </div>
 
       {/* Login Button - Top Right */}
